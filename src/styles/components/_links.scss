@@ -1,0 +1,8 @@
+.link {
+    display: inline-block;
+    @include sm-content;
+    font-weight: $semi-bold-weight;
+    padding: 2rem 4rem;
+    border-radius: 0.5rem;
+
+}

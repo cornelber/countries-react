@@ -1,0 +1,23 @@
+.home {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .home-title {
+        @include lg-content;
+        margin: 4.8rem 0 2.4rem;
+        
+    }
+
+    .home-description {
+        @include md-content;
+        max-width: 50rem;
+        margin-bottom: 4.8rem;
+    }
+
+    .home-title,
+    .home-description,
+    .link {
+        animation: fadeIn .4s linear forwards;
+    }
+}

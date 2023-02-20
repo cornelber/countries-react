@@ -1,0 +1,65 @@
+// Toggler Button
+.toggler-label {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+
+    .toggler-input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .toggler-icons-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+        border-radius: 1.5rem;
+
+        ion-icon {
+            width: 2rem;
+            height: 2rem;
+
+            &[name='sunny'] {
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%) scale(1);
+                animation: fadeIn .4s linear forwards;
+                opacity: 1;
+            }
+
+            &[name='moon'] {
+                display: none;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%) scale(1);
+                animation: fadeIn .4s linear forwards;
+                opacity: 1;
+            }
+        }
+    }
+
+    .toggler-input:checked {
+
+        & + .toggler-icons-wrapper {
+
+            ion-icon {
+                &[name='sunny'] {
+                    display: none;
+                }
+    
+                &[name='moon'] {
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+    font-family: $primary-font;
+}
+
+html {
+    font-size: 10px;
+}
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 7.3rem;
+    padding: 2rem;
+}
+
+form {
+    position: relative;
+}

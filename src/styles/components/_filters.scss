@@ -1,0 +1,106 @@
+.filters-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 4.8rem 0;
+
+    .search-filter-wrapper {
+        max-width: 48rem;
+        width: 100%;
+        animation: fadeInLeft .4s linear forwards;
+        
+        .form {
+            
+            .input-search {
+                width: 100%;
+                padding: 1.8rem 1.8rem 1.8rem 7.4rem;
+                border-radius: 0.5rem;
+                box-shadow: 0px 2px 9px $primary-shadow;
+                transition: .4s;
+    
+                &[type='text'] {
+                    @include sm-content;
+                    transition: .4s;
+                }
+            }
+
+            ion-icon {
+                position: absolute;
+                width: 1.8rem;
+                height: 1.8rem;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 3.2rem;
+                color: $input
+            }
+        }
+    }
+
+    .dropdown-filter-wrapper {
+        position: relative;
+        max-width: 20rem;
+        width: 100%;
+        animation: fadeInRight .4s linear forwards;
+
+        .select {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.8rem 2.4rem;
+            box-shadow: 0px 2px 9px $primary-shadow;
+            border-radius: 0.5rem;
+            @include sm-content;
+            transition: .4s;
+            
+            ion-icon {
+                width: 1.2rem;
+                height: 1.2rem;
+                color: $copy;
+                transition: .4s ease-in-out;
+            }
+
+            &.active {
+
+                ion-icon {
+                    transform: rotate(180deg);
+                }
+
+                .reset-filter-btn {
+                    
+                    ion-icon {
+                        transform: unset;
+                    }
+                }
+            }
+        }
+
+        .options-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 0.4rem;
+            border-radius: 0.5rem;
+            padding: 1.6rem 2.4rem;
+            transition: .4s;
+
+            .option {
+                @include sm-content;
+                text-align: left;
+                transition: .4s;
+
+                &:not(:last-child) {
+                    margin-bottom: 0.8rem;
+                }
+
+                &:hover {
+                    font-weight: $extra-bold-weight;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,144 @@
+.theme-light {
+    transition: .4s;
+    background-color: $theme-light;
+
+    // pages
+    .home {
+
+        & > * {
+            color: $copy;
+        }
+    }
+
+    // components
+    .header {
+        transition: .4s;
+        background-color: $white;
+
+        & > * {
+            color: $copy
+        }
+    }
+
+    .filters-wrapper {
+        .form {
+            .input-search {
+                background-color: $white;
+
+                &[type='text'] {
+                    color: $copy;
+                }
+            }
+        }
+
+        .dropdown-filter-wrapper {
+
+            .select {
+                background-color: $white;
+                color: $copy;
+
+                ion-icon {
+                    color: $copy;
+                }
+            }
+
+            .options-wrapper {
+                background-color: $white;
+                
+                .option {
+                    color: $copy;
+                }
+            }
+        }
+    }
+
+    // buttons
+    .toggler-icons-wrapper {
+        transition: .4s;
+        background-color: $theme-dark;
+
+        ion-icon {
+            transition: .4s;
+            color: $white;
+        }
+    }
+
+    // links
+    .link {
+        background-color: $theme-dark;
+        color: $white;
+    }
+}
+
+.theme-dark {
+    transition: .4s;
+    background-color: $theme-dark;
+    
+    // pages
+    .home {
+
+        & > * {
+            color: $white;
+        }
+    }
+
+
+    // components
+    .header {
+        transition: .4s;
+        background-color: $elements;
+
+        & > * {
+            color: $white;
+        }
+    }
+
+    .filters-wrapper {
+        .form {
+            .input-search {
+                background-color: $elements;
+                
+                &[type='text'] {
+                    color: $white;
+                }
+            }
+        }
+
+        .dropdown-filter-wrapper {
+
+            .select {
+                background-color: $elements;
+                color: $white;
+
+                ion-icon {
+                    color: $white;
+                }
+            }
+
+            .options-wrapper {
+                background-color: $elements;
+                
+                .option {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    // buttons
+    .toggler-icons-wrapper {
+        transition: .4s;
+        background-color: $theme-light;
+
+        ion-icon {
+            transition: .4s;
+            color: $theme-dark;
+        }
+    }
+
+    // links
+    .link {
+        background-color: $theme-light;
+        color: $copy;
+    }
+}

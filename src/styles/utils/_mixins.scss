@@ -1,0 +1,14 @@
+@mixin lg-content {
+    font-size: 2.4rem;
+    line-height: 3.3rem;
+}
+
+@mixin md-content {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+}
+
+@mixin sm-content {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
