@@ -1,12 +1,33 @@
 import React, { useState } from 'react'
 
+const SearchForm = ({ children, onSubmit }) => {
+  return (
+    <form className='search-form' onSubmit={onSubmit}>
+      {children}
+    </form>
+  )
+}
+
+const SearchInputWithIcon = ({ ...props }) => {
+  return (
+    <>
+      <ion-icon name="search" />
+      <input
+        className='search-input' 
+        type="text"
+        {...props}
+      />
+    </>
+  )
+}
+
 const SearchFilterComponent = () => {
   const [inputValue, setInputValue] = useState('');
 
+  
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    setInputValue('')
+    
   }
 
   const handleInputValue = (e) => {
@@ -15,18 +36,17 @@ const SearchFilterComponent = () => {
 
   return (
     <div className="search-filter-wrapper">
-      <form className='form' onSubmit={handleSubmit}>
-        <ion-icon name="search" />
-        <input
-          className='input-search' 
-          type="text" 
-          placeholder='Search for a country'
+      <SearchForm onSubmit={handleSubmit}>
+        <SearchInputWithIcon
+          placeholder='Search for a country...'
           value={inputValue}
           onChange={handleInputValue}
         />
-      </form>
+      </SearchForm>
     </div>
   )
 }
 
 export default SearchFilterComponent
+
+// add validation for input
