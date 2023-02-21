@@ -1,7 +1,7 @@
 import React from 'react'
-import ContainerComponent from '../layouts/ContainerComponent'
-import LayoutComponent from '../layouts/LayoutComponent'
 import { Link } from 'react-router-dom'
+import ContainerComponent from '../components/ContainerComponent'
+import LayoutComponent from '../components/LayoutComponent'
 
 const HomePage = () => {
   return (

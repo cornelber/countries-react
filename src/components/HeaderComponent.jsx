@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ContainerComponent from '../layouts/ContainerComponent';
+import ContainerComponent from './ContainerComponent';
 import ThemeTogglerButton from './Buttons/ThemeTogglerButton';
 
 const HeaderComponent = () => {

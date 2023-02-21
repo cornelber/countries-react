@@ -12,7 +12,7 @@ const ThemeProvider = ({ children }) => {
   });
 
   const toggleTheme = () => {
-    setIsDarkTheme(prev => !prev)
+    setIsDarkTheme(!isDarkTheme)
   }
 
   useEffect(() => {
