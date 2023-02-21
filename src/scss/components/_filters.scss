@@ -43,7 +43,7 @@
         width: 100%;
         animation: fadeInRight .4s linear forwards;
 
-        .select {
+        .dropdown-trigger {
             position: relative;
             width: 100%;
             display: flex;
@@ -59,7 +59,6 @@
             ion-icon {
                 width: 1.2rem;
                 height: 1.2rem;
-                color: $copy;
                 transition: .4s ease-in-out;
             }
 
@@ -67,18 +66,15 @@
 
                 ion-icon {
                     transform: rotate(180deg);
-                }
 
-                .reset-filter-btn {
-                    
-                    ion-icon {
+                    &[name='close'] {
                         transform: unset;
                     }
                 }
             }
         }
 
-        .options-wrapper {
+        .dropdown-list {
             position: relative;
             display: flex;
             flex-direction: column;
@@ -88,18 +84,24 @@
             padding: 1.6rem 2.4rem;
             transition: .4s;
 
-            .option {
+            .dropdown-item {
                 @include sm-content;
                 text-align: left;
-                transition: .4s;
+
+                button {
+                    width: 100%;
+                    text-align: left;
+                    transition: .4s;
+                    
+                    &:hover {
+                        font-weight: $extra-bold-weight;
+                    }
+                }
 
                 &:not(:last-child) {
                     margin-bottom: 0.8rem;
                 }
 
-                &:hover {
-                    font-weight: $extra-bold-weight;
-                }
             }
         }
     }

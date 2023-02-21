@@ -33,7 +33,7 @@
 
         .dropdown-filter-wrapper {
 
-            .select {
+            .dropdown-trigger {
                 background-color: $white;
                 color: $copy;
 
@@ -42,10 +42,10 @@
                 }
             }
 
-            .options-wrapper {
+            .dropdown-list {
                 background-color: $white;
                 
-                .option {
+                .dropdown-item > button {
                     color: $copy;
                 }
             }
@@ -106,7 +106,7 @@
 
         .dropdown-filter-wrapper {
 
-            .select {
+            .dropdown-trigger {
                 background-color: $elements;
                 color: $white;
 
@@ -115,10 +115,10 @@
                 }
             }
 
-            .options-wrapper {
+            .dropdown-list {
                 background-color: $elements;
                 
-                .option {
+                .dropdown-item > button {
                     color: $white;
                 }
             }

@@ -1,12 +1,60 @@
 import React, { useState } from 'react'
+import { dropdownOptionList } from '../../common/constants/FilterConstants'
 
-// TODO: 
-// refactor component
+const DropdownTrigger = () => {
+
+
+    return (
+        <button className='dropdown-trigger'>
+            <span>Filter by Region</span>
+            <ion-icon name="chevron-down"/>
+        </button>
+    )
+}
+
+const DropdownMenu = () => {
+
+
+    return (
+        <div className="dropdown-menu">
+            <ul className='dropdown-list'>
+                {dropdownOptionList.map((el, idx) => (
+                    <li key={idx} className='dropdown-item'>
+                        <button>
+                            {el}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+}
+
+
 
 const DropdownFilterComponent = () => {
-    const [isActive, setIsActive] = useState(false)
-    const [selectedOption, setSelectedOption] = useState('');
-    const optionList = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+    
+
+
+    return (
+        <div className='dropdown-filter-wrapper'>
+            <DropdownTrigger />
+            <DropdownMenu />
+        </div>
+    )
+}
+
+export default DropdownFilterComponent
+
+/*
+import React, { useRef, useState } from 'react'
+import { dropdownOptionList } from '../../common/constants/FilterConstants'; // ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+import { useDetectOutsideClick } from '../../hooks/useDetectOutsideClick';
+
+const DropdownFilterComponent = () => {
+    const dropdownRef = useRef(null)
+    const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false)
+    const [selectedOption, setSelectedOption] = useState(null);
 
 
     const handleSelectOption = (e) => {
@@ -26,32 +74,36 @@ const DropdownFilterComponent = () => {
     return (
         <div className="dropdown-filter-wrapper">
             <button className={`select ${isActive ? 'active' : ''}`} onClick={handleDropdownView}>
-                {selectedOption === '' ? 'Filter by Region' : selectedOption}
                 {
-                    selectedOption === '' ? (
-                        <ion-icon name="chevron-down" />
+                    selectedOption ? (
+                        <>
+                            {selectedOption}
+                            <ion-icon name="close" onClick={resetFilter} />
+                        </>
                     ) : (
-                        <button className='reset-filter-btn' onClick={resetFilter}>
-                            <ion-icon name="close" />
-                        </button>
+                        <>
+                        Filter by Region 
+                        <ion-icon name="chevron-down" />
+                    </>
                     )
                 }
             </button>
             {
-                isActive ? (
-                    <div className="options-wrapper">
+                isActive && (
+                    <div className="options-wrapper" ref={dropdownRef}>
                         {
-                            optionList.map((optionItem, idx) => (
+                            dropdownOptionList.map((optionItem, idx) => (
                                 <button key={idx} className='option' data-value={optionItem} onClick={handleSelectOption}>
                                     {optionItem}
                                 </button>
                             ))
                         }
                     </div>
-                ) : null
+                )
             }
         </div>
     )
 }
 
 export default DropdownFilterComponent
+*/

@@ -6,12 +6,12 @@ import ThemeTogglerButton from './Buttons/ThemeTogglerButton';
 const HeaderComponent = () => {
   return (
     <header className='header'>
-        <ContainerComponent>
-            <Link to='/'>
-                <h1 className='header-logo'>witw</h1>
-            </Link>
-            <ThemeTogglerButton />
-        </ContainerComponent>
+      <ContainerComponent>
+          <Link to='/'>
+            <h1 className='header-logo'>witw</h1>
+          </Link>
+          <ThemeTogglerButton />
+      </ContainerComponent>
     </header>
   )
 }

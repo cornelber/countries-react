@@ -1,0 +1,1 @@
+export const dropdownOptionList = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];

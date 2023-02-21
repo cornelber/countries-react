@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 
 const SearchFilterComponent = () => {
-    const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault()
 
-        setInputValue('')
-    }
+    setInputValue('')
+  }
 
-    const handleInputValue = (e) => {
-        setInputValue(e.target.value)
-    }
+  const handleInputValue = (e) => {
+    setInputValue(e.target.value)
+  }
 
   return (
     <div className="search-filter-wrapper">

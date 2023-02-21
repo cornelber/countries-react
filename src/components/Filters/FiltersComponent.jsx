@@ -5,8 +5,8 @@ import SearchFilterComponent from './SearchFilterComponent'
 const FiltersComponent = () => {
   return (
     <div className='filters-wrapper'>
-        <SearchFilterComponent />
-        <DropdownFilterComponent />
+      <SearchFilterComponent />
+      <DropdownFilterComponent />
     </div>
   )
 }
