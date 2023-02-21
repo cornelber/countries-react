@@ -21,13 +21,23 @@
     }
 
     .filters-wrapper {
-        .form {
-            .input-search {
+
+        .search-form {
+        
+            .search-input {
                 background-color: $white;
+
+                &::placeholder {
+                    color: $copy;
+                }
 
                 &[type='text'] {
                     color: $copy;
                 }
+            }
+
+            ion-icon {
+                color: $copy;
             }
         }
 
@@ -73,7 +83,7 @@
 .theme-dark {
     transition: .4s;
     background-color: $theme-dark;
-    
+
     // pages
     .home {
 
@@ -94,13 +104,23 @@
     }
 
     .filters-wrapper {
-        .form {
-            .input-search {
+        
+        .search-form {
+
+            .search-input {
                 background-color: $elements;
+
+                &::placeholder {
+                    color: $white;
+                }
                 
                 &[type='text'] {
                     color: $white;
                 }
+            }
+
+            ion-icon {
+                color: $white;
             }
         }
 
