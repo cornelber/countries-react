@@ -65,10 +65,9 @@
             &.active {
 
                 ion-icon {
-                    transform: rotate(180deg);
 
-                    &[name='close'] {
-                        transform: unset;
+                    &[name='chevron-down'] {
+                        transform: rotateX(180deg)
                     }
                 }
             }
@@ -83,10 +82,18 @@
             border-radius: 0.5rem;
             padding: 1.6rem 2.4rem;
             transition: .4s;
+            animation: fadeIn .4s ease-in-out;
 
             .dropdown-item {
                 @include sm-content;
                 text-align: left;
+
+                &.selected {
+                    
+                    button {
+                        font-weight: $extra-bold-weight;
+                    }
+                }
 
                 button {
                     width: 100%;

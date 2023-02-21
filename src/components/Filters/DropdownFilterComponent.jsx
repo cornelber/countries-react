@@ -1,27 +1,51 @@
-import React, { useState } from 'react'
-import { dropdownOptionList } from '../../common/constants/FilterConstants'
+import React, { useRef, useState } from 'react';
+import classnames from 'classnames';
+import { useDetectOutsideClick } from '../../hooks/useDetectOutsideClick';
+import { DROPDOWN_OPTIONS } from '../../common/constants/FilterConstants';
 
-const DropdownTrigger = () => {
+const DropdownTrigger = ({ label, selectedOption, isOpen, onClick, onReset}) => {
+    const dropdownTriggerClassNames = classnames('dropdown-trigger', {
+        'active': isOpen
+    })
+    
+    const getDropdownTriggerIcon = () => {
+        if (selectedOption) {
+            return (
+                <span onClick={onReset}>
+                    <ion-icon name="close"/>
+                </span>
+            )
+        } 
 
+        return <ion-icon name="chevron-down"/>
+    }
 
     return (
-        <button className='dropdown-trigger'>
-            <span>Filter by Region</span>
-            <ion-icon name="chevron-down"/>
+        <button className={dropdownTriggerClassNames} onClick={onClick}>
+            <span>{label}</span>
+            {getDropdownTriggerIcon()}
         </button>
     )
 }
 
-const DropdownMenu = () => {
+const DropdownMenu = ({ options, selectedOption, isOpen, onClick }) => {
+    if (!isOpen) {
+        return null;
+    }
 
+    const getDropdownItemClassNames = (option) => {
+        return classnames('dropdown-item', {
+            'selected': option === selectedOption
+        });
+    };
 
     return (
         <div className="dropdown-menu">
             <ul className='dropdown-list'>
-                {dropdownOptionList.map((el, idx) => (
-                    <li key={idx} className='dropdown-item'>
-                        <button>
-                            {el}
+                {options.map((option, idx) => (
+                    <li key={idx} className={getDropdownItemClassNames(option)}>
+                        <button onClick={onClick}>
+                            {option}
                         </button>
                     </li>
                 ))}
@@ -30,80 +54,47 @@ const DropdownMenu = () => {
     )
 }
 
-
-
 const DropdownFilterComponent = () => {
-    
-
-
-    return (
-        <div className='dropdown-filter-wrapper'>
-            <DropdownTrigger />
-            <DropdownMenu />
-        </div>
-    )
-}
-
-export default DropdownFilterComponent
-
-/*
-import React, { useRef, useState } from 'react'
-import { dropdownOptionList } from '../../common/constants/FilterConstants'; // ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
-import { useDetectOutsideClick } from '../../hooks/useDetectOutsideClick';
-
-const DropdownFilterComponent = () => {
-    const dropdownRef = useRef(null)
-    const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false)
+    const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
+    const dropdownRef = useRef(null);
 
+    console.log(selectedOption)
 
-    const handleSelectOption = (e) => {
-        setSelectedOption(e.target.attributes.getNamedItem('data-value').value)
-        setIsActive(prev => !prev)
+    const handleDropdownMenu = () => {
+        setIsOpen(!isOpen);
     }
 
-    const handleDropdownView = () => {
-        setIsActive(prev => !prev)
+    const handleOptionSelect = (e) => {
+        setSelectedOption(e.target.innerHTML);
+        setIsOpen(false)
     }
 
-    const resetFilter = () => {
-        setSelectedOption('')
+    const handleReset = () => {
+        setSelectedOption(null)
     }
 
+    useDetectOutsideClick(dropdownRef, () => {
+        setIsOpen(false)
+    })
 
     return (
-        <div className="dropdown-filter-wrapper">
-            <button className={`select ${isActive ? 'active' : ''}`} onClick={handleDropdownView}>
-                {
-                    selectedOption ? (
-                        <>
-                            {selectedOption}
-                            <ion-icon name="close" onClick={resetFilter} />
-                        </>
-                    ) : (
-                        <>
-                        Filter by Region 
-                        <ion-icon name="chevron-down" />
-                    </>
-                    )
-                }
-            </button>
-            {
-                isActive && (
-                    <div className="options-wrapper" ref={dropdownRef}>
-                        {
-                            dropdownOptionList.map((optionItem, idx) => (
-                                <button key={idx} className='option' data-value={optionItem} onClick={handleSelectOption}>
-                                    {optionItem}
-                                </button>
-                            ))
-                        }
-                    </div>
-                )
-            }
+        <div className='dropdown-filter-wrapper' ref={dropdownRef}>
+            <DropdownTrigger
+                label={selectedOption || 'Filter by Region'}
+                isOpen={isOpen}
+                selectedOption={selectedOption}
+                onClick={handleDropdownMenu}
+                onReset={handleReset}
+            />
+            <DropdownMenu 
+                options={DROPDOWN_OPTIONS}
+                isOpen={isOpen}
+                selectedOption={selectedOption}
+                onClick={handleOptionSelect}
+            />
         </div>
     )
 }
 
 export default DropdownFilterComponent
-*/
