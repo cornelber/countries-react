@@ -59,8 +59,6 @@ const DropdownFilterComponent = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const dropdownRef = useRef(null);
 
-    console.log(selectedOption)
-
     const handleDropdownMenu = () => {
         setIsOpen(!isOpen);
     }
