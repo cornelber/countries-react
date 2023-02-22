@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import classnames from 'classnames'
 import { DROPDOWN_OPTIONS } from '../../common/constants/FilterConstants'
-import { useDetectOutsideClick } from '../../hooks/useDetectOutsideClick'
+import useDetectOutsideClick from '../../hooks/useDetectOutsideClick'
 
 const DropdownTrigger = ({ label, selectedOption, isOpen, onClick, onReset}) => {
     const dropdownTriggerClassNames = classnames('dropdown-trigger', {
