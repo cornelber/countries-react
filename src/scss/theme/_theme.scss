@@ -10,6 +10,14 @@
         }
     }
 
+    .unknown-page {
+
+        .unknown-title,
+        .unknown-description {
+            color: $copy;
+        }
+    }
+
     // components
     .header {
         transition: .4s;
@@ -91,6 +99,15 @@
             color: $white;
         }
     }
+
+    .unknown-page {
+
+        .unknown-title,
+        .unknown-description {
+            color: $white;
+        }
+    }
+    
 
 
     // components
