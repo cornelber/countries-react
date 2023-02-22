@@ -7,9 +7,9 @@ const CountriesPage = () => {
   return (
     <div className='countries'>
       <LayoutComponent>
-          <ContainerComponent>
-            <FiltersComponent />
-          </ContainerComponent>
+        <ContainerComponent>
+          <FiltersComponent />
+        </ContainerComponent>
       </LayoutComponent>
     </div>
   )
