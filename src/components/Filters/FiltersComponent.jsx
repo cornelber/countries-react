@@ -4,10 +4,10 @@ import SearchFilterComponent from './SearchFilterComponent'
 
 const FiltersComponent = () => {
   return (
-    <div className='filters-wrapper'>
+    <section className='filters-section'>
       <SearchFilterComponent />
       <DropdownFilterComponent />
-    </div>
+    </section>
   )
 }
 
