@@ -1,19 +1,19 @@
-import React, { useContext, useEffect } from 'react';
-import { ThemeContext } from '../../contexts/ThemeContext';
+import React, { useContext, useEffect } from 'react'
+import { ThemeContext } from '../../contexts/ThemeContext'
 
 const ThemeTogglerButton = () => {
-    const {isDarkTheme, toggleTheme} = useContext(ThemeContext);
+    const {isDarkTheme, toggleTheme} = useContext(ThemeContext)
 
     // Update body classname if theme is changed
     useEffect(() => {
-        document.body.className = `theme-${isDarkTheme ? 'dark' : 'light'}`;
-    }, [isDarkTheme]);
+        document.body.className = `theme-${isDarkTheme ? 'dark' : 'light'}`
+    }, [isDarkTheme])
 
     return (
         <label className='toggler-label'>
             <input 
                 className='toggler-input' 
-                type="checkbox" 
+                type='checkbox' 
                 checked={isDarkTheme} 
                 onChange={toggleTheme}  
             />

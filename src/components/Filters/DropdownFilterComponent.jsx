@@ -1,23 +1,23 @@
-import React, { useRef, useState } from 'react';
-import classnames from 'classnames';
-import { useDetectOutsideClick } from '../../hooks/useDetectOutsideClick';
-import { DROPDOWN_OPTIONS } from '../../common/constants/FilterConstants';
+import React, { useRef, useState } from 'react'
+import classnames from 'classnames'
+import { DROPDOWN_OPTIONS } from '../../common/constants/FilterConstants'
+import { useDetectOutsideClick } from '../../hooks/useDetectOutsideClick'
 
 const DropdownTrigger = ({ label, selectedOption, isOpen, onClick, onReset}) => {
     const dropdownTriggerClassNames = classnames('dropdown-trigger', {
-        'active': isOpen
+        'active': isOpen,
     })
     
     const getDropdownTriggerIcon = () => {
         if (selectedOption) {
             return (
                 <span onClick={onReset}>
-                    <ion-icon name="close"/>
+                    <ion-icon name='close'/>
                 </span>
             )
-        } 
+        }
 
-        return <ion-icon name="chevron-down"/>
+        return <ion-icon name='chevron-down'/>
     }
 
     return (
@@ -30,17 +30,17 @@ const DropdownTrigger = ({ label, selectedOption, isOpen, onClick, onReset}) => 
 
 const DropdownMenu = ({ options, selectedOption, isOpen, onClick }) => {
     if (!isOpen) {
-        return null;
+        return null
     }
 
     const getDropdownItemClassNames = (option) => {
         return classnames('dropdown-item', {
-            'selected': option === selectedOption
-        });
-    };
+            'selected': option === selectedOption,
+        })
+    }
 
     return (
-        <div className="dropdown-menu">
+        <div className='dropdown-menu'>
             <ul className='dropdown-list'>
                 {options.map((option, idx) => (
                     <li key={idx} className={getDropdownItemClassNames(option)}>
@@ -55,16 +55,16 @@ const DropdownMenu = ({ options, selectedOption, isOpen, onClick }) => {
 }
 
 const DropdownFilterComponent = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [selectedOption, setSelectedOption] = useState(null);
-    const dropdownRef = useRef(null);
+    const [isOpen, setIsOpen] = useState(false)
+    const [selectedOption, setSelectedOption] = useState(null)
+    const dropdownRef = useRef(null)
 
     const handleDropdownMenu = () => {
-        setIsOpen(!isOpen);
+        setIsOpen(!isOpen)
     }
 
     const handleOptionSelect = (e) => {
-        setSelectedOption(e.target.innerHTML);
+        setSelectedOption(e.target.innerHTML)
         setIsOpen(false)
     }
 

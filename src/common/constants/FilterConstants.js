@@ -1,1 +1,1 @@
-export const DROPDOWN_OPTIONS = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+export const DROPDOWN_OPTIONS = ['Africa', 'America', 'Asia', 'Europe', 'Oceania']

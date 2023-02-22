@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 const ContainerComponent = ({ children }) => {
   return (
     <div className='container'>
-        {children}
+      {children}
     </div>
   )
 }

@@ -11,10 +11,10 @@ const SearchForm = ({ children, onSubmit }) => {
 const SearchInputWithIcon = ({ ...props }) => {
   return (
     <>
-      <ion-icon name="search" />
+      <ion-icon name='search' />
       <input
         className='search-input' 
-        type="text"
+        type='text'
         {...props}
       />
     </>
@@ -22,12 +22,11 @@ const SearchInputWithIcon = ({ ...props }) => {
 }
 
 const SearchFilterComponent = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('')
 
   
   const handleSubmit = (e) => {
     e.preventDefault()
-    
   }
 
   const handleInputValue = (e) => {
@@ -35,7 +34,7 @@ const SearchFilterComponent = () => {
   }
 
   return (
-    <div className="search-filter-wrapper">
+    <div className='search-filter-wrapper'>
       <SearchForm onSubmit={handleSubmit}>
         <SearchInputWithIcon
           placeholder='Search for a country...'
