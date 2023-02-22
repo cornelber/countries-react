@@ -10,14 +10,14 @@ const SearchForm = ({ children, onSubmit }) => {
 
 const SearchInputWithIcon = ({ ...props }) => {
   return (
-    <>
+    <label>
       <ion-icon name='search' />
       <input
         className='search-input' 
         type='text'
         {...props}
       />
-    </>
+    </label>
   )
 }
 

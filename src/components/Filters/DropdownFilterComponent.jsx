@@ -11,9 +11,9 @@ const DropdownTrigger = ({ label, selectedOption, isOpen, onClick, onReset}) => 
     const getDropdownTriggerIcon = () => {
         if (selectedOption) {
             return (
-                <span onClick={onReset}>
+                <div role='button' onClick={onReset}>
                     <ion-icon name='close'/>
-                </span>
+                </div>
             )
         }
 
