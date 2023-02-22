@@ -22,10 +22,12 @@
         bottom:0;
         right:0;
         border-radius: 1.5rem;
+        transition: .4s;
 
         ion-icon {
             width: 2rem;
             height: 2rem;
+            transition: .4s;
 
             &[name='sunny'] {
                 display: block;

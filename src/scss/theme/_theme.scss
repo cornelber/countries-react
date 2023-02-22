@@ -1,26 +1,25 @@
+// Light Theme Colors
 .theme-light {
     transition: .4s;
     background-color: $theme-light;
 
     // pages
-    .home {
+    .home-wrapper {
 
         & > * {
             color: $copy;
         }
     }
 
-    .unknown-page {
+    .unknown-wrapper {
 
-        .unknown-title,
-        .unknown-description {
+        & > * {
             color: $copy;
         }
     }
 
     // components
     .header {
-        transition: .4s;
         background-color: $white;
 
         & > * {
@@ -72,11 +71,9 @@
 
     // buttons
     .toggler-icons-wrapper {
-        transition: .4s;
         background-color: $theme-dark;
 
         ion-icon {
-            transition: .4s;
             color: $white;
         }
     }
@@ -88,22 +85,22 @@
     }
 }
 
+// Dark Theme Colors
 .theme-dark {
     transition: .4s;
     background-color: $theme-dark;
 
     // pages
-    .home {
+    .home-wrapper {
 
         & > * {
             color: $white;
         }
     }
 
-    .unknown-page {
+    .unknown-wrapper {
 
-        .unknown-title,
-        .unknown-description {
+        & > * {
             color: $white;
         }
     }
@@ -112,7 +109,6 @@
 
     // components
     .header {
-        transition: .4s;
         background-color: $elements;
 
         & > * {
@@ -164,11 +160,9 @@
 
     // buttons
     .toggler-icons-wrapper {
-        transition: .4s;
         background-color: $theme-light;
 
         ion-icon {
-            transition: .4s;
             color: $theme-dark;
         }
     }
