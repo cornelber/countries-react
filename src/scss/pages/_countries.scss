@@ -1,4 +1,3 @@
-// refactor scss
 .countries-section {
 
     .countries-list {
@@ -7,9 +6,10 @@
         gap: 7.4rem;
 
         .card {
-            background-color: $white;
             box-shadow: 0px 0px 7px 2px $primary-shadow;
             border-radius: 0.5rem;
+            transition: .4s;
+            animation: backInUp .4s linear forwards;
 
             .card-image-wrapper {
                 max-height: 16rem;
@@ -18,7 +18,7 @@
                 img {
                     max-width: 26.4rem;
                     width: 100%;
-                    height: 100%;
+                    height: 16rem;
                     object-fit: cover;
                     border-radius: 0.5rem 0.5rem 0 0;
                 }

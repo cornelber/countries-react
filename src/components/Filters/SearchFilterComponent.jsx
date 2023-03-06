@@ -1,10 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { Context } from '../../contexts/Context'
 
 const SearchForm = ({ children, onSubmit }) => {
   return (
     <form className='search-form' onSubmit={onSubmit}>
       {children}
     </form>
+  )
+}
+
+const SearchResetIcon = ({onReset}) => {
+  return (
+    <button className='input-reset-btn' onClick={onReset}>
+        <ion-icon name='close'/>
+    </button>
   )
 }
 
@@ -22,15 +31,21 @@ const SearchInputWithIcon = ({ ...props }) => {
 }
 
 const SearchFilterComponent = () => {
+  const { setCountrySearch } = useContext(Context)
   const [inputValue, setInputValue] = useState('')
 
-  
   const handleSubmit = (e) => {
     e.preventDefault()
   }
 
+  const handleReset = () => {
+    setInputValue('')
+    setCountrySearch('')
+  }
+
   const handleInputValue = (e) => {
     setInputValue(e.target.value)
+    setCountrySearch(inputValue)
   }
 
   return (
@@ -42,6 +57,9 @@ const SearchFilterComponent = () => {
           onChange={handleInputValue}
         />
       </SearchForm>
+      {
+        inputValue && <SearchResetIcon onReset={handleReset}/>
+      }
     </div>
   )
 }

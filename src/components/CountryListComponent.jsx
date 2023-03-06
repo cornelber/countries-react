@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CountryCardComponent from './CountryCardComponent'
+import { Context } from '../contexts/Context'
 
 const CountryListComponent = ({ countries }) => {
+    const { countrySearch, regionSearch } = useContext(Context)
 
     return (
         <section className='countries-section'>
             <div className='countries-list'>
                 {
-                    countries.map((country) => (
+                    countries.filter((el) => 
+                        el.name.toLowerCase().includes(countrySearch.toLowerCase()) &&
+                        el.region.toLowerCase().includes(regionSearch.toLowerCase())  
+                    ).map((country) => (
                         <CountryCardComponent
                             key={Number(country.id)}
                             name={country.name}

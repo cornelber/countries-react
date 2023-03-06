@@ -29,6 +29,10 @@
 
     .filters-section {
 
+        .input-reset-btn {
+            color: $copy;
+        }
+
         .search-form {
         
             .search-input {
@@ -68,6 +72,24 @@
             }
         }
     }
+    
+    .loader {
+        color: $elements;
+
+        &::after {
+            background-color: $elements;
+        }
+
+        &::before {
+            background-color: $copy;
+        }
+    }
+
+    .card {
+        background-color: $white;
+        color: $copy;
+    }
+
 
     // buttons
     .toggler-icons-wrapper {
@@ -117,6 +139,10 @@
     }
 
     .filters-section {
+
+        .input-reset-btn {
+            color: $white;
+        }
         
         .search-form {
 
@@ -156,6 +182,23 @@
                 }
             }
         }
+    }
+
+    .loader {
+        color: $white;
+
+        &::after {
+            background-color: $white;
+        }
+
+        &::before {
+            background-color: $input;
+        }
+    }
+
+    .card {
+        background-color: $elements;
+        color: $white;
     }
 
     // buttons

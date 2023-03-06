@@ -1,7 +1,8 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useContext } from 'react'
 import classnames from 'classnames'
 import { DROPDOWN_OPTIONS } from '../../common/constants/FilterConstants'
 import useDetectOutsideClick from '../../hooks/useDetectOutsideClick'
+import { Context } from '../../contexts/Context'
 
 const DropdownTrigger = ({ label, selectedOption, isOpen, onClick, onReset}) => {
     const dropdownTriggerClassNames = classnames('dropdown-trigger', {
@@ -58,6 +59,7 @@ const DropdownFilterComponent = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [selectedOption, setSelectedOption] = useState(null)
     const dropdownRef = useRef(null)
+    const { setRegionSearch } = useContext(Context)
 
     const handleDropdownMenu = () => {
         setIsOpen(!isOpen)
@@ -66,10 +68,12 @@ const DropdownFilterComponent = () => {
     const handleOptionSelect = (e) => {
         setSelectedOption(e.target.innerHTML)
         setIsOpen(false)
+        setRegionSearch(e.target.innerHTML)
     }
 
     const handleReset = () => {
         setSelectedOption(null)
+        setRegionSearch('')
     }
 
     useDetectOutsideClick(dropdownRef, () => {
