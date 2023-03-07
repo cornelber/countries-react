@@ -18,6 +18,16 @@
         }
     }
 
+    .countries-section {
+
+        .countries-list {
+
+            .countries-search-message {
+                color: $copy;
+            }
+        }
+    }
+
     // components
     .header {
         background-color: $white;
@@ -124,6 +134,16 @@
 
         & > * {
             color: $white;
+        }
+    }
+
+    .countries-section {
+
+        .countries-list {
+
+            .countries-search-message {
+                color: $white;
+            }
         }
     }
     

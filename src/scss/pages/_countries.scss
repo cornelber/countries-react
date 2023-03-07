@@ -5,6 +5,10 @@
         grid-template-columns: repeat(4, minmax(264px, 264px));
         gap: 7.4rem;
 
+        .countries-search-message {
+            @include md-content;
+        }
+
         .card {
             box-shadow: 0px 0px 7px 2px $primary-shadow;
             border-radius: 0.5rem;
