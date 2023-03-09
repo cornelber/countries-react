@@ -18,6 +18,7 @@ const CountryListComponent = ({ countries }) => {
                         ).map((country) => (
                             <CountryCardComponent
                                 key={Number(country.id)}
+                                countryCode={country.id}
                                 name={country.name}
                                 capital={country.capital}
                                 region={country.region}

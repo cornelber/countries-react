@@ -2,12 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { convertPopulationFormat } from '../common/utils/convertPopulationFormat'
 
-const CountryCardComponent = ({ name, capital, region, population, image }) => {
+const CountryCardComponent = ({ name, capital, region, population, image, countryCode }) => {
     const convertedPopulation = convertPopulationFormat(population)
+    
 
     return (
         <div className='card'>
-            <Link>
+            <Link to={`/countries/${countryCode}`}>
                 <div className="card-image-wrapper">
                     <img src={image} alt={name} />
                 </div>

@@ -100,6 +100,9 @@
         color: $copy;
     }
 
+    .country-border {
+        background-color: $white;
+    }
 
     // buttons
     .toggler-icons-wrapper {
@@ -107,6 +110,14 @@
 
         ion-icon {
             color: $white;
+        }
+    }
+
+    .back-btn {
+        color: $copy;
+        background-color: $white;
+        ion-icon {
+            color: $copy;
         }
     }
 
@@ -227,6 +238,15 @@
 
         ion-icon {
             color: $theme-dark;
+        }
+    }
+
+    .back-btn {
+        color: $white;
+        background-color: $elements;
+
+        ion-icon {
+            color: $white;
         }
     }
 

@@ -65,3 +65,21 @@
         }
     }
 }
+
+.back-btn {
+    padding: 1rem 4rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    border-radius: .5rem;
+    animation: fadeInLeft .4s linear forwards;
+    transition: .4s;
+
+    ion-icon {
+        margin-right: 1rem;
+        width: 2rem;
+        height: 2rem;
+        transition: .4s;
+    }
+}

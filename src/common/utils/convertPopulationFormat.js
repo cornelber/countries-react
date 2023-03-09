@@ -6,7 +6,7 @@ export const convertPopulationFormat = (val) => {
         if (i % 3 !== 0 || i === 0) {
             arrayWithDots.push(reverseArray[i])
         } else {
-            arrayWithDots.push('.', reverseArray[i])
+            arrayWithDots.push(',', reverseArray[i])
         }
     }
 

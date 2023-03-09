@@ -18,3 +18,28 @@ export const getCountriesDetails = (apiResponse) => {
 
     return adaptedCountriesDetails
 }
+
+export const getCountryDetails = (apiResponse) => {
+    if (!apiResponse || apiResponse.error) {
+        return {}
+    }
+
+    const rawCountryDetails = apiResponse[0]
+
+    
+    const adaptedCountryDetails = {
+        name: rawCountryDetails.name.common,
+        nativeName:  Object.values(rawCountryDetails.name.nativeName)[0].official,
+        population: rawCountryDetails.population,
+        region: rawCountryDetails.region,
+        subRegion: rawCountryDetails.subregion,
+        capital: rawCountryDetails.capital,
+        tpd: rawCountryDetails.tld,
+        currencies: Object.values(rawCountryDetails.currencies)[0].name,
+        languages: Object.values(rawCountryDetails.languages),
+        borderCountries: rawCountryDetails.borders,
+        image: rawCountryDetails.flags.png,
+    }
+
+    return adaptedCountryDetails
+}
